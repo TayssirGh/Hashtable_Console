@@ -16,7 +16,7 @@ public class Service {
         int i = hash(value);
         Node n = table.getNodes()[i];
         while ( n != null){
-            if (n.getValue()==value){
+            if (n.getValue().equals(value)){
                 return true;
             }
             n = n.getNext();
@@ -27,6 +27,7 @@ public class Service {
         int i =0;
         for(int j = 0; j<value.length(); j++){
             i+=(int) value.charAt(j);
+            i*=31;
         }
         return i%3;
     }
@@ -63,7 +64,7 @@ public class Service {
         Node p = table.getNodes()[i];
         Node q = null;
         while(p!= null){
-            if(p.getValue() == value){
+            if(value.equals(p.getValue())){
                 if(q == null){
                     table.getNodes()[i] = p.getNext();
                 }

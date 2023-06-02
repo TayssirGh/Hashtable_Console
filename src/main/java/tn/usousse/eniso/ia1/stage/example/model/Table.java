@@ -3,7 +3,10 @@ package tn.usousse.eniso.ia1.stage.example.model;
 
 
 public class Table{
-   private Node[] nodes;
+    public Table() {
+    }
+
+    private Node[] nodes;
 
     public Node[] getNodes() {
         return nodes;
