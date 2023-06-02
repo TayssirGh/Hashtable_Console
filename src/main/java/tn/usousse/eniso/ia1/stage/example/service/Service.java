@@ -3,7 +3,7 @@ package tn.usousse.eniso.ia1.stage.example.service;
 import tn.usousse.eniso.ia1.stage.example.model.Node;
 import tn.usousse.eniso.ia1.stage.example.model.Table;
 
-
+import java.lang.Math;
 public class Service {
     private final Table table;
 
@@ -27,9 +27,8 @@ public class Service {
         int i =0;
         for(int j = 0; j<value.length(); j++){
             i+=(int) value.charAt(j);
-            i*=31;
         }
-        return i%3;
+        return Math.abs(i%3);
     }
 
 
